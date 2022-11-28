@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "144f09cb-62b9-42f5-8f3c-8b1f29f6a0df",
+		"name": "Efishery Odoo API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11784012"
+	},
+	"item": [
+		{
+			"name": "Auth JWT Json",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\" \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8069/api/auth_jwt_json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"api",
+						"auth_jwt_json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Json",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\" \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8069/api/fetch_json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"api",
+						"fetch_json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\", \n    \"params\": {\n        \"partner_id\": 23,\n        \"order_line\": [\n            {\n            \"product_id\": 35,\n            \"qty\": 2\n            },\n            {\n            \"product_id\": 24,\n            \"qty\": 4\n            }\n        ]\n        \n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8069/api/order/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"api",
+						"order",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Order List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\" \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8069/api/order/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"api",
+						"order",
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluIn0.k44hcY_9fZaRC1YdYqxKZyV4uhzLljPLcdla3h6bbIE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
