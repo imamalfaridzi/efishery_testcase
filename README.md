@@ -1,4 +1,4 @@
-# Efishery Testcase for Odoo Platform Developer
+# Efishery Testcase for Odoo Platform Enginer
 
 
 ## Installation
