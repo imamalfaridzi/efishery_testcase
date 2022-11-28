@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="importusers_qweb" model="ir.ui.view">
+            <field name="name">Import Users</field>
+            <field name="type">qweb</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <t name="Import Users" t-name="importusers_qweb">
+                    <t t-call="efishery_website.importusers">
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+
+    <data>
+        <record id="importusers_page" model="website.page">
+            <field name="name">Import Users</field>
+            <field name="url">/importusers</field>
+            <field name="view_id" ref="importusers_qweb"/>
+            <field name="track" eval="False"/>
+            <field name="website_indexed" eval="False"/>
+            <field name="is_published" eval="True"/>
+        </record>
+
+        <record id="menu_importusers" model="website.menu">
+            <field name="name">Import Users</field>
+            <field name="url">/importusers</field>
+            <field name="page_id" ref="efishery_website.importusers_page"/>
+            <field name="parent_id" ref="website.main_menu" />
+            <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="sequence" type="int">99</field>
+        </record>
+    </data>
+</odoo>

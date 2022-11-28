@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template name="Import Users" id="importusers">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="s_title pt32 pb16 o_colored_level" data-vcss="001" data-snippet="s_title" data-name="Title">
+                        <div class="container s_allow_columns">
+                            <h1 style="text-align: center;">
+                               Form Import Users
+                            </h1>
+                        </div>
+                    </section>
+                    <section class="s_website_form pt16 pb16 o_colored_level" data-vcss="001" data-snippet="s_website_form" data-name="Form">
+                        <div class="container">
+                            <!-- <form action="/importusers/submit" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-success-mode="redirect">
+                                <div class="s_website_form_rows">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <div class="form-group">
+                                        <label for="attachment" class="control-label">Select a CSV or Excel file to import.</label>
+                                        <br/>
+                                        <input type="file" name="attachment" id="attachment" required="required" accept=".csv" class="file" multiple="true" data-show-upload="true" data-show-caption="true" lass="file" data-show-preview="true"/>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form> -->
+                            <form action="/importusers/submit" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-success-mode="redirect">
+                                <div class="s_website_form_rows row s_col_no_bgcolor">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <div class="form-group s_website_form_field col-12 s_website_form_custom s_website_form_required  " data-type="file" data-name="Field">
+                                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                                            <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="attachment">
+                                                <span class="s_website_form_label_content">Select a CSV or Excel file to import</span>
+                                                <span class="s_website_form_mark"> *</span>
+                                            </label>
+                                            <div class="col-sm">
+                                                <input type="file" name="attachment" id="attachment" required="required" accept=".csv" multiple="true" data-show-upload="true" data-show-caption="true" lass="file" data-show-preview="true"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-12 s_website_form_submit" data-name="Submit Button">
+                                        <div style="width: 200px;" class="s_website_form_label"/>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    <section class="s_website_form pt16 pb16 o_colored_level" data-vcss="001" data-snippet="s_website_form" data-name="Form">
+                        <div class="container s_allow_columns">
+                            <table class="table table-condensed table-hover" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Date</th>
+                                        <th>State</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="import_ids" t-as="line">
+                                        <tr>
+                                            <td><span t-field="line.name"/></td>
+                                            <td><span t-field="line.create_date"/></td>
+                                            <td><span t-field="line.state"/></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+
+        <template id="assets_backend" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/efishery_website/static/src/js/web_client.js"/>
+            </xpath>
+        </template>
+
+        <template id="assets_frontend" inherit_id="website.assets_frontend">
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/efishery_website/static/src/js/widget.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

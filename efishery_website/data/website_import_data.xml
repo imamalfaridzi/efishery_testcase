@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="website_import_sequence" model="ir.sequence">
+            <field name="name">Website Import</field>
+            <field name="code">website.import</field>
+            <field name="prefix">WI/%(y)s/</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>
